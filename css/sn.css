@@ -2313,3 +2313,104 @@
 	width: 76px;
 	height: 28px;
 }
+
+
+.leftbar{
+	width: 70px;
+	height: 300px;
+	background: #f8f8f8;		
+	position: fixed;
+	top:50%;
+	left: 50%;
+	bottom: 100px;
+	margin-left: -670px;
+	display: none;
+	border-right: 1px solid #e8e8e8;
+}
+
+.tips{			
+	width: 100%;
+	height: 30px;
+	cursor: pointer;
+	border-bottom: 1px solid #e8e8e8;
+	line-height: 30px;
+	font-size: 12px;
+	text-align: center;
+	color: #333;
+
+
+}
+.tips.active{
+		background:  #F90;
+		color: white;
+}
+.tips:hover{
+	background-color: #F90;
+	color: white;
+}
+
+.topbar{
+		position: fixed;
+		width: 100%;
+		height: 40px;
+		top: 0;
+		left: 0;
+		background: #F2F2F2;
+		opacity: 0.9;
+		display: none;
+
+}
+.nav_left1{
+	width: 190px;
+	height: 38px;
+	background-color: #FF9900;
+	float: left;
+	margin-left: 72px;
+	color: white;
+	float: left;
+}
+.topbar input{
+	width: 400px;
+	height: 34px;
+	border: 2px solid #FF9900;
+	margin-left: 200px;
+	color: #ccc;
+	padding-left: 30px;
+	float: left;
+}
+.sousuokuang{
+	width: 100px;
+	height: 38px;
+	background: #FF9900;
+	font-size: 18px;
+	color: white;
+	float: left;
+	font-weight: 800;
+	/* padding-left: 30px; */
+	text-align: center;
+	line-height:38px;
+}
+.BN_nav li{
+	position: relative;
+}
+.title_xq{
+	width: 600px;
+	height: 440px;
+	background-color:white;
+	position: absolute;
+	left:190px;
+	top: -20px;
+	/* display: none; */
+}
+.title_xq span{
+	font-weight: 	400;
+	font-size: 	14px;
+	color:#333;
+	text-align:center;
+}
+.title_xq p{
+	font-weight: 	400;
+	font-size: 	14px;
+	color:#333;
+	text-align:center;
+}
