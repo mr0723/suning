@@ -56,6 +56,62 @@
 		//给同一个页面弄很多的属性和事件
 }
 
+//轮播图
+{
+	let imgs=document.querySelectorAll(".BN_gdt");
+	let pagers=document.querySelectorAll(".pagerbox li");
+	let banner=document.querySelector(".BN");
+	let next=document.querySelector(".next");
+	let prev=document.querySelector(".prev");
+	console.log(imgs);
+	console.log(banner);
+	pagers.forEach(function(ele,index){
+			ele.onclick=function(){
+				for(let i=0;i<imgs.length;i++){
+					imgs[i].classList.remove("active");
+					pagers[i].classList.remove("active");
+				}
+				this.classList.add("active");
+				imgs[index].classList.add("active");
+				n=index;
+			}
+		})
+	//让轮播图自己播放的效果
+	let n=0;
+	let t=setInterval(move,3000);
+		function move() {
+		n++;
+		if(n===imgs.length){
+			n=0; 
+		}
+		if(n<0){
+			n=imgs.length-1;
+		}
+		for (let i=0;i<imgs.length;i++){
+			imgs[i].classList.remove("active");
+			pagers[i].classList.remove("active");
+		}
+		imgs[n].classList.add("active");
+		pagers[n].classList.add("active");
+		}
+	//鼠标移入的时候，停止
+	banner.onmouseenter=function(){
+		clearInterval(t);
+	};
+	banner.onmouseleave=function(){
+		//赋值一定要赋给t，使用全局变量t，不然的话，动画就会停不了，鼠标移入也没有意义。
+		t=setInterval(move,3000);
+	};
+	next.onclick=function(){
+		move();
+	};
+	prev.onclick=function(){
+		n-=2;
+		move();
+	};
+}
+
+
 
 {
 	let labels=document.querySelectorAll(".BN_nav li");
@@ -73,4 +129,54 @@
     				menus[index].style.display="none";
     			}
     		})
+}
+{
+	let content=document.querySelector(".content_neir")
+	let prev=document.querySelector(".prev1")
+	let next=document.querySelector(".next1")
+	let inner=document.querySelector(".content_neir3")
+	content.onmouseenter=function(){
+		prev.style.display="block";
+		next.style.display="block";
+	}
+
+	content.onmouseleave=function(){
+		prev.style.display="none";
+		next.style.display="none";
+	}
+	let n=1;
+	let flag=true;
+	next.onclick=function(){
+		if(flag){
+			flag=false;
+			n++;
+		inner.style.transition="all 1s";
+		inner.style.marginLeft=-1000*n+"px";
+		}	
+	}
+	prev.onclick=function(){
+		if(flag){
+			flag=false;
+			n--;
+		inner.style.transition="all 1s";
+		inner.style.marginLeft=-1000*n+"px";
+		}	
+	}
+	inner.addEventListener("transitionend",function(){
+			flag=true;
+			if(n===4){
+			inner.style.transition="none";
+			inner.style.marginLeft="-1000px";
+				n=1;
+			}
+			
+			if(n===0){
+				inner.style.transition="none";
+				inner.style.marginLeft="-3000px";
+				n=3;//N值要跟marginleft的值相匹配
+			}	
+		
+
+	})
+
 }

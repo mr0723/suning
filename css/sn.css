@@ -2390,17 +2390,20 @@
 	text-align: center;
 	line-height:38px;
 }
-.BN_nav li{
-	position: relative;
+.BN_nav{
+/* 	position: relative; */
+	position: absolute;
 }
+
 .title_xq{
 	width: 600px;
 	height: 440px;
 	background-color:white;
 	position: absolute;
 	left:190px;
-	top: -20px;
-	/* display: none; */
+	top: 0px;
+	display: none;
+	z-index: 1000;
 }
 .title_xq span{
 	font-weight: 	400;
@@ -2413,4 +2416,108 @@
 	font-size: 	14px;
 	color:#333;
 	text-align:center;
+}
+.search_three{
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	color: #FFF;
+	font-family: 'MicroSoft YaHei';
+	text-align: center;
+	line-height: 42px;
+}
+.BN_gdt{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.BN_img .active{
+	z-index: 999;
+}
+.BN_img1,.BN_img2{
+	z-index: 1000;
+}
+
+.pagerbox{
+	width: 300px;
+	height: 10px;
+/* 	background: red; */
+	position: absolute;
+	right: 500px;
+	bottom: 30px;
+	z-index: 1001;
+
+}
+.pagerbox li{
+	width: 10px;
+	height: 10px;
+	margin: 0 auto;
+	background: #fff;
+	float: left;
+	border-radius: 50%;
+	border: 2px solid #6b6b6b;
+	cursor: pointer;
+	margin-left: 8px;
+}
+.pagerbox li.active{
+	background: yellow;
+}
+.pagerbox li:hover{
+	background: red;
+}
+.prev,.next{
+	width: 41px;
+	height: 69px;
+	position: absolute;
+	top: 50%;
+	margin-top: -80px;
+	z-index: 9999;
+	/* background: url('img/tubiao.png'); */
+	cursor: pointer;
+	opacity: .6;
+	line-height: 69px;	
+	text-align: center;
+	font-size: 30px;
+	font-weight: 800;
+}
+.prev{
+	left: 190px;
+	background-position: -84px 0;
+	color: white;
+}
+.prev:hover{
+	background: rgba(0,0,0,0.2);
+}
+.next{
+	right: 170px;
+	background-position: -124px 0;
+	color: white;
+}
+.next:hover{
+	background: rgba(0,0,0,0.2);
+}
+.content_neir{
+	overflow: hidden;
+}
+.content_neir3{
+	width: 5000px;
+	height: 200px;
+	transition: all 1s;
+}
+.prev1,.next1{
+			width: 30px;
+			height: 30px;
+			background: red;
+			color: white;
+			text-align: center;
+			line-height: 30px;
+			position: absolute;
+			top: 85px;
+			display: none;
+		}
+.prev1{
+	left: 0;
+	}
+.next1{
+	right: 0;
 }
